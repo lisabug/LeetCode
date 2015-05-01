@@ -12,7 +12,6 @@ def longestPalindrome(s):
     for (i, c) in enumerate(ss):
         if i < m:
             p[i] = min(m-i, p[2*id-i])
-            print p
         while i+p[i] < len(ss) and i - p[i] >= 0 and ss[i+p[i]] == ss[i-p[i]]:
             p[i] += 1
         if p[i] > p[id]:
@@ -20,8 +19,7 @@ def longestPalindrome(s):
             m = i + p[i]
 
     # find longest palindrome substring
-    longest_center_index = p.index(max(p))
-    tmp_longest = ss[(longest_center_index-p[longest_center_index]+1):(longest_center_index+p[longest_center_index]-1)]
+    tmp_longest = ss[id-p[id]+1:id+p[id]+1]
     longest = ""
     for x in tmp_longest:
         if x != "#" and x != "$":
