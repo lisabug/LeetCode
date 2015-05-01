@@ -20,15 +20,15 @@ def longestPalindrome(s):
 
     # find longest palindrome substring
     tmp_longest = ss[id-p[id]+1:id+p[id]+1]
-    longest = ""
-    for x in tmp_longest:
-        if x != "#" and x != "$":
-            longest += x
+    longest = filter(discard_symbol, tmp_longest)
 
     return longest
 
 
 def plus_symbol(p, q):
     return p + "#" + q
+
+def discard_symbol(s):
+    return s != "#" and s != "$"
 
 print longestPalindrome("a")
