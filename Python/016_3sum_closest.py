@@ -11,7 +11,6 @@ class Solution:
             return 0
 
         nums.sort()
-        print nums
         result = nums[0] + nums[1] + nums[2]
         for i, num in enumerate(nums):
             if i > len(nums) - 2:
