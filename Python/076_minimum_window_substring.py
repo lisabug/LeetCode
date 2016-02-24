@@ -12,17 +12,17 @@ class Solution(object):
         hashTable = dict()
         count = len(t)
         for c in t:
-            hashTable[c] = hashTable.get(c, 0) + 1
+            hashTable[c] = hashTable.get(c,0) + 1
         start, minStart = 0,0
         minLength = len(s) + 1
         for end, c in enumerate(s):
             if hashTable.get(c,0) > 0:
                 count -= 1
-            hashTable[c] = hashTable.get(c, 0) - 1
+            hashTable[c] = hashTable.get(c,0) - 1
             while count == 0:
                 if end - start < minLength:
                     minStart = start
-                    minLength = end - start
+                    minLength = end - start + 1
                 hashTable[s[start]] = hashTable.get(s[start], 0) + 1
                 if hashTable[s[start]] > 0:
                     count += 1
