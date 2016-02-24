@@ -28,4 +28,4 @@ class Solution(object):
                     count += 1
                 start += 1
 
-        return s[minStart:minStart+minLength+1] if minLength <= len(s) else ""
+        return s[minStart:minStart+minLength] if minLength <= len(s) else ""
